@@ -1,0 +1,194 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.xal{
+
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 5;
+    top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.btn-sol,
+.btn-sag{
+    width: 100px;
+    height: 40px;
+    position: fixed;
+    z-index: 10;
+    bottom: 50px;
+    background-repeat: no-repeat;
+    background-size: auto 30px;
+    background-position: center;
+    background-image: url(../img/arow.png);
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    opacity: 0.7;
+    
+}
+.btn-sol{
+    left: 30px;
+    transform: rotateY(180deg);    
+}
+.btn-sag{
+    right: 30px;
+}
+
+.menu{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/design.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    filter: blur(3px);
+}
+.play{
+    width: 120px;
+    height: 120px;
+    background-image: url(../img/play.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px 5px #FA1D19;
+    position: fixed;
+    z-index: 25;
+    top: calc((100vh - 120px) / 2);
+    left: calc((100vw - 120px) / 2);
+}
+
+.gizle{
+    display: none !important;
+}
+
+.oyun{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/yol.png);
+}
+
+.mese-sol,
+.mese-sag{
+    width: 50px;
+    height: 100%;
+    float: left;
+    background-image: url(../img/mese.png);
+    background-size: 50px 100px;
+    animation-name: hereket-asaqi;
+    animation-duration:2s;
+    animation-delay:0ms;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+
+}
+
+.zolaq-sol,
+.zolaq-sag{
+    width: 20px;
+    height: 100%;
+    float: left;
+    background-image: url(../img/zolaq.png);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+}
+.zolaq-sag{
+    transform: rotateY(180deg);
+}
+
+.yol{
+    width: calc(100% - 140px);
+    height: 100%;
+    float: left;
+}
+
+.yol div{
+    width: calc(100% / 4);
+    height: 100%;
+    float: left;
+    background-image: url(../img/yol.png);
+    text-align: center;
+    padding-right: calc(((100% / 4) / 2));
+    /* yolun hereket etdirilmesi */
+}
+
+.xett{
+    border-right: 5px dashed #767674;
+}
+
+.men{
+    width: 35px;
+    height: 70px;
+    /* animation-name: don-sag; */
+    animation-duration:1000ms;
+    animation-delay:0ms;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-play-state: running;
+    position: absolute;
+
+}
+.reqib{
+    width: 35px;
+    height: 65px;
+    position: absolute;
+    transition:250ms top;
+}
+
+@keyframes don-sag{
+    0%{
+        transform:rotateZ(35deg) translate(0px,0px) ;
+    }
+    50%{
+        transform:rotateZ(7deg) translate(calc((100vw - 140px) /4),-70px);
+    }
+    100%{
+        transform:rotateZ(0deg) translate(calc((100vw - 140px) /4),0px);
+    }
+}
+@keyframes don-sol{
+    0%{
+        transform:rotateZ(-35deg) translate(0px,0px) ;
+    }
+    50%{
+        transform:rotateZ(-7deg) translate(calc(-1*((100vw - 140px) /4)),-70px);
+    }
+    100%{
+        transform:rotateZ(0deg) translate(calc(-1*((100vw - 140px) /4)),0px);
+    }
+}
+
+
+@keyframes hereket-asaqi{
+    from{
+        background-position: 0px 0px;
+    }
+    to{
+        background-position: 0px 100px;
+    }
+}
